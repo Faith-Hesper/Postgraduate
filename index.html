@@ -54,13 +54,32 @@
     }
 
     .happy {
+      position: relative;
       min-height: 60px;
       text-align: center;
       font-weight: bold;
       color: #333333;
       line-height: 36px;
-      margin: 10px;
-      padding: 10px 20px;
+      margin: 10px 60px;
+      padding: 20px 40px;
+    }
+
+    .happy span {
+      display: block;
+      position: absolute;
+      font-size: 80px;
+      color: #FCD2AC;
+      font-weight: bold;
+      font-family: Arial;
+      top: 15px;
+      left: 0;
+    }
+
+    .happy span:last-child {
+      top: auto;
+      left: auto;
+      bottom: -15px;
+      right: 0;
     }
   </style>
   <script>
@@ -94,13 +113,13 @@
     const biaoyu = ["你笔下拥有一个色彩绚丽的世界：愿你，也相信你，拥有另一个笔下灿烂的图景。", "一年一次的人生大迈步又要到来了，相信你一定会比别人走的更远；跑的更快；考得更好。",
       "别驻足，梦想要不停追逐；不认输，熬过黑夜是日出；都清楚，成功就在下一步；路很苦，汗水是最美的书；狂欢呼，相约在巅峰共舞！",
       "考研的路途充满了艰辛和泪水，但结果会是快乐的，只要你认真的努力了，全心的投入了，我相信在考研的路上你收获的不仅仅只是最后的录取通知书，而更多的是一份受益终生的经历，一段永远难忘的经历！", "考研的成功，不在于你复习多长的时间，而在于时间、效率、耐力三者的乘积。",
-      , "考研是一项伟大的工程，它是对人的意志力，判断力，交际力等综合能力的考验。", "考研是个漫长的过程，途中风风雨雨，荆棘丛生，要走完这段路，需要的是坚持，需要的是不断的从堕落中重生，从放松中觉醒！"];
+      "考研是一项伟大的工程，它是对人的意志力，判断力，交际力等综合能力的考验。", "考研是个漫长的过程，途中风风雨雨，荆棘丛生，要走完这段路，需要的是坚持，需要的是不断的从堕落中重生，从放松中觉醒！"];
 
-    let rand = biaoyu[parseInt(Math.random() * (biaoyu.length - 1))];
+    let rand = biaoyu[parseInt(Math.ceil(Math.random() * (biaoyu.length - 1)))];
     console.log(rand);
     setTimeout(() => {
 
-      document.querySelector(".happy").textContent = rand
+      document.querySelector(".happy .text").textContent = rand
     }, 300);
 
   </script>
@@ -130,7 +149,11 @@
       </div>
       <p>秒</p>
     </div>
-    <div class="happy"></div>
+    <div class="happy">
+      <span>“</span>
+      <div class="text"></div>
+      <span>”</span>
+    </div>
   </div>
 </body>
 
